@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To do list</title>
+    <script src="./js/bundle.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <h1>ToDo's</h1>
+    <div id="app">
+
+      <form v-on:submit.prevent="addToList">
+        <input required id="name" type="text" placeholder="What else do I need to do?" v-model="newName"/>
+        <input required type="radio" name="priority" value="High" v-model="newPriority">High
+        <input required type="radio" name="priority" value="Normal" v-model="newPriority">Normal
+        <input required type="radio" name="priority" value="Low" v-model="newPriority">Low
+        <input type="submit" value="Add to List"/>
+      </form>
+
+      <ul>
+        <li v-for="(item, index) in listItems" v-bind:class="item.priority">
+          <span>{{item.name}}</span>
+        </li>
+      </ul>
+
+    </div>
+  </body>
+</html>
