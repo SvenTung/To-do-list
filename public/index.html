@@ -13,10 +13,10 @@
     <div id="app">
 
       <form v-on:submit.prevent="addToList">
-        <input required id="name" type="text" placeholder="What else do I need to do?" v-model="newName"/>
-        <input required type="radio" name="priority" value="High" v-model="newPriority">High
-        <input required type="radio" name="priority" value="Normal" v-model="newPriority">Normal
-        <input required type="radio" name="priority" value="Low" v-model="newPriority">Low
+        <input required id="name" type="text" placeholder="What else do I need to do?" v-model="newItem.name"/>
+        <input required type="radio" name="priority" value="High" v-model="newItem.priority">High
+        <input required type="radio" name="priority" value="Normal" v-model="newItem.priority">Normal
+        <input required type="radio" name="priority" value="Low" v-model="newItem.priority">Low
         <input type="submit" value="Add to List"/>
       </form>
 

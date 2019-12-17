@@ -8,14 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
         {name: "Homework", priority: "Low"},
         {name: "Gaming", priority: "High"}
       ],
-      newName: "",
-      newPriority: ""
+      newItem:{
+        name: "",
+        priority: null
+      }
     },
     methods:{
       addToList: function(){
-        this.listItems.push({name: this.newName, priority: this.newPriority})
-        this.newName = ""
-        this.newPriority = ""
+        this.listItems.push(this.newItem)
+        this.newItem = {
+          name: "",
+          priority: null
+        }
       }
     },
   });
